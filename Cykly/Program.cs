@@ -1,5 +1,27 @@
-﻿// While cyklus => používáme, když neznáme počet opakování, ale máme podmínku pro opakování
+﻿// Do while cyklus => vždy alespoň jednou vykoná, poté kontroluje podmínku!
+string inputText = "";
+int inputNumber = -1;
+do
+{
+    Console.Clear();
+    if (inputNumber != 0)
+    {
+        Console.WriteLine("Zadej číslo!");
+    } else
+    {
+        Console.BackgroundColor = ConsoleColor.Red; // pozadí
+        Console.ForegroundColor = ConsoleColor.White; // text
+        Console.WriteLine("Zadal jsi neplatné číslo, zadej, prosím, znovu!");
+        Console.ResetColor(); // zresetování barev
+    }
 
+    inputText = Console.ReadLine();
+} while (!int.TryParse(inputText, out inputNumber));
+
+Console.WriteLine($"Číslo se povedlo přeparsovat {inputNumber}");
+Console.ReadKey();
+
+// While cyklus => používáme, když neznáme počet opakování, ale máme podmínku pro opakování
 int y = 0;
 while (y < 10)
 {
